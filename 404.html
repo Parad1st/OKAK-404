@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Название страницы в браузере -->
+    <title>Кто-то съел этот сайт.</title>
+</head>
+<body>
+    <style>
+        /* Обнуление стилей и общие настройки */
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* Главный контейнер приложения */
+    .app{
+        position: relative;
+        height: 100svh;
+        background: #050505;
+        overflow: hidden;
+        font-family: "Montserrat", sans-serif;
+        color: #fff;
+        font-size: 18px;
+    }
+    /* Контейнер для изображения */
+    .img{
+        position: absolute;
+        bottom: 0;
+        max-width: 1920px;
+        margin: 0 auto;
+        animation: catAnim 1.5s ease forwards;
+    }
+    /* Стиль для самого изображения */
+    .img img{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+     /* Анимация для появления кота снизу */
+    @keyframes catAnim {
+        0%{
+            translate: 0 50%;
+        }
+        100%{
+            translate: 0 0;
+        }
+    }
+    /* Стиль для текста "ОКАК" */
+    .okak{
+        position: absolute;
+        bottom: 150px;
+        left: 50%;
+        translate: -50% 0;
+        font-weight: 900;
+        font-size: 115px;
+    }
+    /* Стиль для текста ошибки "404" */
+    .error{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 750px;
+        font-weight: 900;
+        transform: translate(-50%, 800px);
+        animation: errorAnim 1.5s ease forwards;
+    }
+
+    /* Анимация для появления ошибки сверху */
+    @keyframes errorAnim {
+        100% {
+            transform: translate(-50%, -400px);
+        }
+    }
+    /* Стиль для кнопки "Вернуться на главную" */
+    .home-button {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 255, 255, 0.1); /*  Полупрозрачный белый фон */
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 2; /*  Чтобы кнопка была поверх других элементов */
+        font-family: "Montserrat", sans-serif;
+        text-decoration: none; /*  Убираем подчеркивание у ссылки */
+    }
+
+    /* Стиль для кнопки при наведении */
+    .home-button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+	
+    </style>
+
+     <div class="app">
+        <div class="error">
+            404
+        </div>
+        <div class="img">
+            <img src="img/cat.png" alt="cat">
+            <h1 class="okak">ОКАК</h1>
+        </div>
+		<!-- Кнопка для возврата на главную страницу -->
+        <a href="https://parad1st.github.io" class="home-button">Вернуться на главную</a>
+    </div>
+
+
+    
+</body>
+</html>
